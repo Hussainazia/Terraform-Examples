@@ -1,9 +1,9 @@
 
 resource "aws_instance" "aws_ec2_test" {
-	        
-        ami = "ami-053b0d53c279acc90"
+	for_each = var.ec2_instance 
+        ami = each.value["type"]
         instance_type = "t2.micro"
         tags = {
-     Name = "test-instance"
+     	Name = each.value["name"]
   }
 }

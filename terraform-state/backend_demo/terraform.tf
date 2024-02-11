@@ -8,9 +8,9 @@ required_providers {
   }
 
 backend "s3" {
-	bucket = "terraweek-demo-state-bucket" 
+	bucket = "sunny-terra-prec-bucket" 
 	key = "terraform.tfstate"
 	region = "us-east-1"
-	dynamodb_table = "terraweek-demo-state-table"
-}
+	dynamodb_table = "terraform-state-table"
+	}
 }
